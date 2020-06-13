@@ -1,0 +1,31 @@
+<form class="k-form" >
+    <fieldset class="k-form-fieldset">
+        <kendo-avatar [initials]="'EG'" width="80px"  height="80px" [shape]="'circle'"></kendo-avatar>
+        <kendo-formfield>
+            <kendo-label text="Username"></kendo-label>
+            <input kendoTextBox #username required/>
+
+            <kendo-formhint>Your Username</kendo-formhint>
+            <kendo-formerror>Error: Username is required</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield>
+
+            <kendo-label text="Password">
+            </kendo-label>
+            <input type="password" formControlName="password" kendoTextBox #password required/>
+        </kendo-formfield>
+
+        <kendo-formfield>
+            <div class="k-checkbox-wrap">
+                <input #loggedin type="checkbox" kendoCheckBox formControlName="loggedin"/>
+                <kendo-label [for]="loggedin" class="k-checkbox-label" text="Keep me logged in"></kendo-label>
+            </div>
+            <kendo-formhint>Next time, you will be logged in automatically</kendo-formhint>
+        </kendo-formfield>
+
+        <div class="k-form-buttons">
+            <button class="k-button k-primary" (click)="login()">Login</button>
+            <button class="k-button" (click)="clearForm()">Clear</button>
+        </div>
+    </fieldset>
+</form>
