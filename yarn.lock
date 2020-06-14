@@ -1105,6 +1105,14 @@
     "@telerik/kendo-draggable" "^2.0.0"
     tslib "^1.9.0"
 
+"@progress/kendo-angular-dropdowns@^4.2.7":
+  version "4.2.7"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-angular-dropdowns/-/kendo-angular-dropdowns-4.2.7.tgz#bc345802fa11bce85a1cc0e33f4d5100a4f86438"
+  integrity sha512-RYBuHK9vkcAor/ry3jYZ/GN6VC17lBiTqxNDWoGAVq4/fAEPY9giETUMr4PfQRFrjyi+ifw/nxPQV3MVvITXdQ==
+  dependencies:
+    "@progress/kendo-schematics" "^1.1.0"
+    tslib "^1.9.0"
+
 "@progress/kendo-angular-inputs@^6.6.0":
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/@progress/kendo-angular-inputs/-/kendo-angular-inputs-6.6.0.tgz#52415b48a5cc50e75539ecfca4b65dc48f208154"
@@ -1129,6 +1137,14 @@
   resolved "https://registry.yarnpkg.com/@progress/kendo-angular-l10n/-/kendo-angular-l10n-2.0.1.tgz#f9a7c05b95206a7cd498679afb7296634e4aad0e"
   integrity sha512-Cle4qxwAD9Hz77tVxkHFKOrl5CPy11l2+r173X/bxqFOzoeKW9NXDYBxm9s5wWkMmV2YHMEyVh1atjk9Kzka8Q==
   dependencies:
+    tslib "^1.9.0"
+
+"@progress/kendo-angular-label@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@progress/kendo-angular-label/-/kendo-angular-label-2.3.1.tgz#b0cbc4a01472f78224a4b0bb3073ee3c789b297f"
+  integrity sha512-riekcx3m3J3EdrmsuWNcMZJYKEuFEo6xKWKgXrhIJle4XAVrgzviZLdWCzfagO2hn3SR9/IcAbhOVJtT71YEdA==
+  dependencies:
+    "@progress/kendo-schematics" "^1.0.0"
     tslib "^1.9.0"
 
 "@progress/kendo-angular-popup@^3.0.0":

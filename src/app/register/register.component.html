@@ -1,31 +1,54 @@
-<form class="k-form" >
-    <fieldset class="k-form-fieldset">
-        <kendo-avatar [initials]="'EG'" width="80px"  height="80px" [shape]="'circle'"></kendo-avatar>
-        <kendo-formfield>
-            <kendo-label text="Username"></kendo-label>
-            <input kendoTextBox #username required/>
 
-            <kendo-formhint>Your Username</kendo-formhint>
-            <kendo-formerror>Error: Username is required</kendo-formerror>
-        </kendo-formfield>
-        <kendo-formfield>
-
-            <kendo-label text="Password">
-            </kendo-label>
-            <input type="password" formControlName="password" kendoTextBox #password required/>
-        </kendo-formfield>
-
-        <kendo-formfield>
-            <div class="k-checkbox-wrap">
-                <input #loggedin type="checkbox" kendoCheckBox formControlName="loggedin"/>
-                <kendo-label [for]="loggedin" class="k-checkbox-label" text="Keep me logged in"></kendo-label>
+<body>
+<div class="container body-bag">
+   <div class="row">
+      <div class="col-md-8 offset-md-2">
+         <div class="card m-5 ">
+            <h3 class="card-header header-color">Sign up</h3>
+            <div class="card-body">
+               <form>
+                  <div class="form-row">
+                     <div class="form-group col-6">
+                           <label>First Name</label>
+                           <input kendoTextBox class="form-control" />
+                     </div>
+                     <div class="form-group col-6">
+                           <label>Last Name</label>
+                           <input kendoTextBox class="form-control" />
+                     </div>
+                  </div>
+                     <div class="form-group">
+                        <label>Email</label>
+                        <input kendoTextBox class="form-control"/>
+                     </div>
+                     <div class="form-row">
+                        <div class="form-group col">
+                              <label>Password</label>
+                              <input kendoTextBox type="password" class="form-control" />
+                        </div>
+                        <div class="form-group col">
+                              <label>Confirm Password</label>
+                              <input kendoTextBox type="password"  class="form-control" />
+                        </div>
+                     </div>
+                     <div class="text-center">
+                        <button kendoButton class="mr-2">Register</button>
+                        <button kendoButton type="reset">Cancel</button>
+                     </div>
+               </form>
             </div>
-            <kendo-formhint>Next time, you will be logged in automatically</kendo-formhint>
-        </kendo-formfield>
-
-        <div class="k-form-buttons">
-            <button class="k-button k-primary" (click)="login()">Login</button>
-            <button class="k-button" (click)="clearForm()">Clear</button>
-        </div>
-    </fieldset>
-</form>
+         </div>
+         <div class="text-center">
+         
+         <p class="color">
+            Already a member?
+         <a routerLink="/signin" routerLinkActive="active" target="_top">Sign In</a>
+         <br>
+         <a routerLink="/" routerLinkActive="active" target="_top">Home</a>
+         <br>
+         </p>
+         </div>
+      </div>
+   </div>
+</div>
+</body>
