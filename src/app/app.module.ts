@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRouterModule } from './app-router.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ToastrModule } from 'ngx-toastr'
 
 //UI Imports
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
@@ -27,8 +28,10 @@ import { AdminpageComponent } from './adminpage/adminpage.component';
 import { AddDetailsComponent } from './add-details/add-details.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
-
-
+//services
+import { UserService } from './user.service';
+import { HttpClientModule } from '@angular/common/http';
+import { InitialPageComponent } from './initial-page/initial-page.component';
 
 
 @NgModule({
@@ -41,16 +44,19 @@ import { SignInComponent } from './sign-in/sign-in.component';
     AccessDeniedComponent,
     AdminpageComponent,
     AddDetailsComponent,
-    SignInComponent
+    SignInComponent,
+    InitialPageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,FlexLayoutModule,MatFormFieldModule,MatSelectModule,MatCardModule,
     AppRouterModule,
-    ButtonsModule,
-    InputsModule,MatToolbarModule, LabelModule, DropDownsModule,ReactiveFormsModule,FormsModule,
+    ButtonsModule,ToastrModule.forRoot({
+      progressBar: true
+    }),
+    InputsModule,MatToolbarModule, LabelModule, DropDownsModule,ReactiveFormsModule,FormsModule,HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

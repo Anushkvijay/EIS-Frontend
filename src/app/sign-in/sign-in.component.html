@@ -5,21 +5,21 @@
              <div class="card m-5 ">
                 <h3 class="card-header color">Sign In</h3>
                 <div class="card-body">
-                   <form>
+                   <form #form = 'ngForm' autocomplete="off" (submit)="onSubmit(form)">
                       <div class="form-row">
                          <div class="form-group col-12">
                                <label>Username</label>
-                               <input kendoTextBox class="form-control" />
+                               <input kendoTextBox class="form-control" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" required/>
                          </div>
                       </div>
                          <div class="form-row">
                             <div class="form-group col-12">
                                   <label>Password</label>
-                                  <input kendoTextBox type="password" class="form-control" />
+                                  <input kendoTextBox type="password" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required/>
                             </div>
                          </div>
                          <div class="text-center">
-                            <button kendoButton class="mr-2 mt-2">Login</button>
+                            <button kendoButton class="mr-2 mt-2" type="submit">Login</button>
                          </div>
                    </form>
                 </div>
