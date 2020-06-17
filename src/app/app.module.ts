@@ -30,8 +30,10 @@ import { SignInComponent } from './sign-in/sign-in.component';
 
 //services
 import { UserService } from './user.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InitialPageComponent } from './initial-page/initial-page.component';
+import { AuthInterceptor } from './auth/auth.interceptor';
+import { AuthGuard } from 'src/app/auth/auth.guard'
 
 
 @NgModule({
@@ -56,7 +58,11 @@ import { InitialPageComponent } from './initial-page/initial-page.component';
     }),
     InputsModule,MatToolbarModule, LabelModule, DropDownsModule,ReactiveFormsModule,FormsModule,HttpClientModule
   ],
-  providers: [UserService],
+  providers: [UserService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi:true
+  },AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

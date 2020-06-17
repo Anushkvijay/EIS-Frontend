@@ -17,7 +17,9 @@ export class SignInComponent implements OnInit {
     UserName:'',
     Password:''
   }
-  ngOnInit(): void {
+  ngOnInit() {
+    if(localStorage.getItem('token')!= null)
+    this.router.navigateByUrl('/home');
   }
 
   onSubmit(form:NgForm){
