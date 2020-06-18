@@ -1,0 +1,88 @@
+<body>
+    <div class="card m-1">
+    <div class="card-body">
+    <div class="grid-table">
+        <div class="thead">
+            <div class="tr">
+                <div class="td">First Name</div>
+                <div class="td">Last Name</div>
+                <div class="td">Department</div>
+                <div class="td">Email</div>
+                <div class="td">DOB</div>
+                <div class="td">Project</div>
+                <div class="td">Contact</div>
+                <div class="td">Emergency Contact</div>
+                <div class="td">Address</div>
+                <div class="td">Work Hours</div>
+                <div class="td">Pancard</div>
+                <div class="td">PTO Leave</div>
+                <div class="td">
+                    <button class="btn btn-outline-success btn-sm" (click)="addEmployeeDetailForm()">
+                        <i class="fa fa-plus"></i> New Employee
+                    </button>
+                </div>
+                <div class="td">
+                    <span *ngIf="notification" class="elementToFadeInAndOut">
+                        <i class="fas fa-check-circle {{notification.class}}"></i>
+                        {{notification.message}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="tbody">
+            <form class="tr" [formGroup]="fg" *ngFor="let fg of employeeDetailForms.controls; let i=index;" (submit)="recordSubmit(fg)">
+                <div class="td">
+                    <input class="form-control" formControlName="firstName">
+                </div>
+                <div class="td">
+                    <input class="form-control" formControlName="lastName">
+                </div>
+                <div class="td">
+                    <select class="form-control" formControlName="deptID">
+                        <option value="0">Select</option>
+                        <option *ngFor="let item of deptList" value="{{item.deptID}}">{{item.deptName}}</option>
+                    </select>
+                </div>
+                <div class="td">
+                    <input class="form-control" formControlName="email">
+                </div>
+                <div class="td">
+                    <input class="form-control" formControlName="dob">
+                </div>
+                <div class="td">
+                    <input class="form-control" formControlName="project">
+                </div>
+                <div class="td">
+                    <input class="form-control" formControlName="contact">
+                </div>
+                <div class="td">
+                    <input class="form-control" formControlName="emergencyContact">
+                </div>
+                <div class="td">
+                    <input class="form-control" formControlName="address">
+                </div>
+                <div class="td">
+                    <input class="form-control" formControlName="workHours">
+                </div>
+                <div class="td">
+                    <input class="form-control" formControlName="pancard">
+                </div>
+                <div class="td">
+                    <input class="form-control" formControlName="pto">
+                </div>
+                <div class="td">
+                    <button type="submit" class="btn btn-sm" [disabled]="fg.invalid"
+                        [ngClass]="(fg.get('emplID').value==0)?'btn-success':'btn-outline-dark'"><i
+                            class="far fa-save fa-lg"></i>
+                        {{fg.get('emplID').value==0?'Submit':'Update'}}
+                    </button>
+                    <button class="btn btn-light ml-1 btn-sm" (click)="onDelete(fg.get('emplID').value,i)">
+                        <i class="far fa-trash-alt fa-lg text-danger"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>

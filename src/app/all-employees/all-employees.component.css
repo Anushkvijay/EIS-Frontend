@@ -1,0 +1,53 @@
+body{background-image:url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);background-position:center;background-size:cover;background-repeat:no-repeat;min-height:100vh;font-family:'Roboto', sans-serif;}
+body{height:100%;margin:0;padding:0;}
+.grid-table
+{
+	display:table;
+}
+.thead
+{
+	display:table-header-group;
+	font-weight:bold;
+	border-bottom: 1px solid black;
+    text-align: center;
+    background-color: #f0f8ff;
+}
+.tbody
+{
+	display:table-row-group;
+}
+.tr
+{
+	display:table-row;
+	
+}
+.td
+{
+	display:table-cell;
+	padding: 5px 1px 1px 5px;
+}
+.thead div.tr div.td:last-child{
+    background-color: #fff;
+}
+i:hover{
+	cursor: pointer;
+}
+
+input.ng-invalid.ng-touched,select.ng-invalid.ng-touched{
+	border-color: #dc3545;
+}
+
+
+.elementToFadeInAndOut {
+    -webkit-animation: fadeinout 2s linear forwards;
+    animation: fadeinout 2s linear forwards;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeinout {
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  50% { opacity: 1; }
+}

@@ -34,6 +34,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InitialPageComponent } from './initial-page/initial-page.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { AuthGuard } from 'src/app/auth/auth.guard'
+import { GridModule } from '@progress/kendo-angular-grid';
+import { AllEmployeesComponent } from './all-employees/all-employees.component';
+
 
 
 @NgModule({
@@ -47,7 +50,8 @@ import { AuthGuard } from 'src/app/auth/auth.guard'
     AdminpageComponent,
     AddDetailsComponent,
     SignInComponent,
-    InitialPageComponent
+    InitialPageComponent,
+    AllEmployeesComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,7 @@ import { AuthGuard } from 'src/app/auth/auth.guard'
     ButtonsModule,ToastrModule.forRoot({
       progressBar: true
     }),
-    InputsModule,MatToolbarModule, LabelModule, DropDownsModule,ReactiveFormsModule,FormsModule,HttpClientModule
+    InputsModule,MatToolbarModule, LabelModule, DropDownsModule,ReactiveFormsModule,FormsModule,HttpClientModule, GridModule
   ],
   providers: [UserService, {
     provide: HTTP_INTERCEPTORS,

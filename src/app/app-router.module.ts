@@ -7,6 +7,7 @@ import { InitialPageComponent } from './initial-page/initial-page.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
+import { AllEmployeesComponent } from './all-employees/all-employees.component';
 
 const routes:Routes =[
     {path:'', component:InitialPageComponent},
@@ -14,7 +15,8 @@ const routes:Routes =[
     {path:'login',component:SignInComponent},
     {path:'home',component:HomePageComponent,canActivate:[AuthGuard]},
     {path:'forbidden',component:AccessDeniedComponent},
-    {path:'adminpanel',component:AdminpageComponent,canActivate:[AuthGuard],data:{permittedRoles:['Admin']}}
+    {path:'adminpanel',component:AdminpageComponent,canActivate:[AuthGuard],data:{permittedRoles:['Admin']}},
+    {path:'employee-details',component:AllEmployeesComponent,canActivate:[AuthGuard],data:{permittedRoles:['Admin']}}
 ]
 
 @NgModule({
