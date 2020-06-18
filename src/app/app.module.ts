@@ -16,7 +16,7 @@ import { LabelModule } from '@progress/kendo-angular-label';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { MatCardModule } from '@angular/material/card'
+import { MatCardModule  } from '@angular/material/card'
 
 //components
 import { HeaderComponent } from './header/header.component';
@@ -27,6 +27,8 @@ import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { AddDetailsComponent } from './add-details/add-details.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 //services
 import { UserService } from './user.service';
@@ -36,6 +38,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { AuthGuard } from 'src/app/auth/auth.guard'
 import { GridModule } from '@progress/kendo-angular-grid';
 import { AllEmployeesComponent } from './all-employees/all-employees.component';
+import { PertEmployeesComponent } from './pert-employees/pert-employees.component';
 
 
 
@@ -51,11 +54,12 @@ import { AllEmployeesComponent } from './all-employees/all-employees.component';
     AddDetailsComponent,
     SignInComponent,
     InitialPageComponent,
-    AllEmployeesComponent
+    AllEmployeesComponent,
+    PertEmployeesComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,FlexLayoutModule,MatFormFieldModule,MatSelectModule,MatCardModule,
+    BrowserAnimationsModule,FlexLayoutModule,MatFormFieldModule,MatSelectModule,MatCardModule,MatDatepickerModule,
     AppRouterModule,
     ButtonsModule,ToastrModule.forRoot({
       progressBar: true

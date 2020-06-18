@@ -1,6 +1,37 @@
-<H1>
-    DUMMY DATA
-    DUMMY DATA
-    DUMMY DATA
-    DUMMY DATA
-</H1>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand mr-auto" href="/"><img src="assets/deloitte.png" height="15" width="80" class="align-self-center"></a>
+            <div class="collapse navbar-collapse" id="Navbar">
+                    <span class="col-10"></span>
+                    <button routerLink="/adminpanel" kendoButton [look]="'flat'" [icon] = "'wrench'" class="k-block">Admin Panel</button>
+                    <button kendoButton [look]="'flat'" [icon] = "'user'" class="k-block" (click)="onLogout()">Logout</button>
+            </div> 
+        </div>
+     </nav>
+     <div class="container">
+        <div class="row">
+            <div class="col-3 mt-5 ">
+                    <div class="card m-5" style="width:18rem" *ngIf="userDetails">
+                       <ul class="list-group">
+                       <li class="list-group-item"><strong>Welcome !</strong> </li>
+                         <li class="list-group-item"><strong>Username : </strong>{{userDetails.userName}}</li>
+                         <li class="list-group-item"><strong>FullName : </strong>{{userDetails.fullName}}</li>
+                         <li class="list-group-item"><strong>Email : </strong>{{userDetails.email}}</li>
+                       </ul>
+                   </div>
+            </div>
+            <div class="col-3 offset-3">
+                <div class="pt-5">
+                    <div class="card m-5" style="width:18rem">
+                        <button routerLink="/adminpanel" kendoButton [look]="'flat'" [icon] = "'wrench'" class="k-block">Admin Panel</button>
+                     </div>
+                   </div>
+            </div>
+        </div>
+       </div>
+    
+    
+</body>
+
+    

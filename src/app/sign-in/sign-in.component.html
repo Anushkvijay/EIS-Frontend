@@ -1,6 +1,16 @@
 <body>
+   <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+      <div class="container">
+          <a class="navbar-brand mr-auto" href="/"><img src="assets/deloitte.png" height="15" width="80" class="align-self-center"></a>
+          <div class="collapse navbar-collapse" id="Navbar">
+                  <span class="col-10"></span>
+                  <button routerLink="/" kendoButton [look]="'flat'" [icon] = "'login'" class="k-block">Sign In</button>
+                  <button routerLink="/register" kendoButton [look]="'flat'" [icon] = "'user'" class="k-block">Sign Up</button>
+          </div> 
+      </div>
+   </nav>
     <div class="container body-bag">
-       <div class="row">
+       <div class="row  mt-5">
           <div class="col-md-6 offset-md-3">
              <div class="card m-5 ">
                 <h3 class="card-header color">Sign In</h3>

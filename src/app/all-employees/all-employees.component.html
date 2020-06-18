@@ -1,7 +1,7 @@
 <body>
     <div class="card m-1">
     <div class="card-body">
-    <div class="grid-table">
+    <div class="grid-table table-condensed">
         <div class="thead">
             <div class="tr">
                 <div class="td">First Name</div>
@@ -47,7 +47,8 @@
                     <input class="form-control" formControlName="email">
                 </div>
                 <div class="td">
-                    <input class="form-control" formControlName="dob">
+                    <input matInput class="form-control" formControlName="dob" [matDatepicker]="myDatepicker">
+                    <mat-datepicker #myDatepicker></mat-datepicker>
                 </div>
                 <div class="td">
                     <input class="form-control" formControlName="project">
@@ -56,7 +57,7 @@
                     <input class="form-control" formControlName="contact">
                 </div>
                 <div class="td">
-                    <input class="form-control" formControlName="emergencyContact">
+                    <input class="form-control" formControlName="emrgncyContact">
                 </div>
                 <div class="td">
                     <input class="form-control" formControlName="address">

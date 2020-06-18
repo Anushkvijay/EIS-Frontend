@@ -8,3 +8,12 @@ body{height:100%;margin:0;padding:0;}
 .card-header{
   background-color: black;
 }
+
+.k-block{
+  color: white;
+  background-color: white;
+  
+}
+
+.navbar-dark {
+  background-color: black; }

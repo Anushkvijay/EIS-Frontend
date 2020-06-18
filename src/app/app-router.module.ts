@@ -8,6 +8,7 @@ import { AuthGuard } from './auth/auth.guard';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { AdminpageComponent } from './adminpage/adminpage.component';
 import { AllEmployeesComponent } from './all-employees/all-employees.component';
+import { PertEmployeesComponent } from './pert-employees/pert-employees.component';
 
 const routes:Routes =[
     {path:'', component:InitialPageComponent},
@@ -16,7 +17,8 @@ const routes:Routes =[
     {path:'home',component:HomePageComponent,canActivate:[AuthGuard]},
     {path:'forbidden',component:AccessDeniedComponent},
     {path:'adminpanel',component:AdminpageComponent,canActivate:[AuthGuard],data:{permittedRoles:['Admin']}},
-    {path:'employee-details',component:AllEmployeesComponent,canActivate:[AuthGuard],data:{permittedRoles:['Admin']}}
+    {path:'employeedetails',component:AllEmployeesComponent,canActivate:[AuthGuard],data:{permittedRoles:['Admin']}},
+    {path:'editdetails',component:PertEmployeesComponent,canActivate:[AuthGuard]}
 ]
 
 @NgModule({
