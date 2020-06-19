@@ -1,5 +1,16 @@
 <body>
-    <div class="card m-1">
+        <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+            <div class="container">
+                <a class="navbar-brand mr-auto" href="/"><img src="assets/deloitte.png" height="15" width="80" class="align-self-center"></a>
+                <div class="collapse navbar-collapse" id="Navbar">
+                    <span style="color: white;" class="align-bottom ml-2">Employee Management System</span>
+                    <span class="col-7"></span>
+                        <button routerLink="/adminpanel" kendoButton [look]="'flat'" [icon] = "'wrench'" class="k-block">Admin Panel</button>
+                        <button kendoButton [look]="'flat'" [icon] = "'user'" class="k-block" (click)="onLogout()">Logout</button>
+                </div> 
+            </div>
+         </nav>
+    <div class="card m-1 pt-5">
     <div class="card-body">
     <div class="grid-table table-condensed">
         <div class="thead">
@@ -47,8 +58,7 @@
                     <input class="form-control" formControlName="email">
                 </div>
                 <div class="td">
-                    <input matInput class="form-control" formControlName="dob" [matDatepicker]="myDatepicker">
-                    <mat-datepicker #myDatepicker></mat-datepicker>
+                    <input  class="form-control" formControlName="dob">
                 </div>
                 <div class="td">
                     <input class="form-control" formControlName="project">

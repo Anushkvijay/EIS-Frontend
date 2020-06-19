@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormArray, Validators, FormGroup } from '@angular/forms';
 import { DepartmentService } from '../department.service';
 import { EmployeeService } from '../employee.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-all-employees',
@@ -14,7 +15,7 @@ export class AllEmployeesComponent implements OnInit {
   deptList = [];
   notification = null;
 
-  constructor(private fb:FormBuilder,private deptService:DepartmentService,private service:EmployeeService) { }
+  constructor(private router:Router,private fb:FormBuilder,private deptService:DepartmentService,private service:EmployeeService) { }
 
   ngOnInit(): void {
     this.deptService.getDepartmentList()
@@ -91,6 +92,10 @@ export class AllEmployeesComponent implements OnInit {
           this.showNotification('delete');
         });
   }
+  onLogout(){
+    localStorage.removeItem('token');
+    this.router.navigate(['/login'])
+  }
 
   showNotification(category) {
     switch (category) {
@@ -111,5 +116,5 @@ export class AllEmployeesComponent implements OnInit {
       this.notification = null;
     }, 3000);
   }
-
+  
 }
